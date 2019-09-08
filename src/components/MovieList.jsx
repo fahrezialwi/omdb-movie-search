@@ -48,15 +48,15 @@ class MovieList extends Component {
     modal = () => {
         return (
             <div>
-                <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader toggle={this.toggle}>Movie Detail</ModalHeader>
                     <ModalBody>
                         <div className="container-fluid">
                             <div className="row">
-                                <div className="col-md-4">
+                                <div className="col-4">
                                     <img src={this.state.poster} alt={this.state.title} className="img-fluid"/>
                                 </div>
-                                <div className="col-md-8">
+                                <div className="col-8">
                                     <ul className="list-group">
                                         <li className="list-group-item"><h3>{this.state.title}</h3></li>
                                         <li className="list-group-item">Released : {this.state.released}</li>
@@ -79,9 +79,9 @@ class MovieList extends Component {
     renderList = () => {
         return this.props.data.map((item) => {
             return (
-                <div className="col-lg-3 col-md-6 col-sm-6" key={item.imdbID} onClick={() => {this.modalOpen(item.imdbID)}}>
+                <div className="col-lg-3 col-md-6 col-sm-6 col-6" key={item.imdbID} onClick={() => {this.modalOpen(item.imdbID)}}>
                     <div className="card card-size mb-3 card-link">
-                        <img src={item.Poster} className="card-image" alt={item.Title}/>
+                        <img src={item.Poster} className="card-image" alt={item.Title} />
                         <div className="card-body">
                         <h5 className="card-title word-break">{item.Title}</h5>
                         <h6 className="card-subtitle mb-2 text-muted">{item.Year}</h6>
