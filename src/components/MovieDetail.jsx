@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import axios from 'axios'
 
-class ModalDetail extends Component {
+class MovieDetail extends Component {
  
   constructor(props) {
     super(props)
@@ -60,7 +60,7 @@ class ModalDetail extends Component {
       <div>
         <div className="card-link" style={{cursor: "pointer", color: "#007bff"}} onClick={this.modalOpen}>See Detail</div>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Movie Details</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Movie Detail</ModalHeader>
           <ModalBody>
             <div className="container-fluid">
               <div className="row">
@@ -89,4 +89,4 @@ class ModalDetail extends Component {
   }
 }
 
-export default ModalDetail
+export default MovieDetail

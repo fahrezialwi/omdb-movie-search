@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Navbar from './components/Navbar'
-import SearchBar from './components/SearchBar'
-import MovieList from './components/MovieList'
+import Navbar from './Navbar'
+import SearchBar from './SearchBar'
+import MovieList from './MovieList'
 import axios from 'axios'
 
 class App extends Component {
@@ -36,7 +36,7 @@ class App extends Component {
             <div>
                 <Navbar/>
                 <div className="container">
-                    <SearchBar fun = {this.onSearchSubmit} />
+                    <SearchBar func = {this.onSearchSubmit} />
                     <MovieList data = {this.state.movies}/>
                 </div>
             </div>

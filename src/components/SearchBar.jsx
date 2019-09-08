@@ -8,13 +8,12 @@ class SearchBar extends Component {
         }
     }
 
-    onSubmitForm = (e) => {
+    onFormSubmit = (e) => {
         e.preventDefault()
-
-        this.props.fun(this.state.keyword)
+        this.props.func(this.state.keyword)
     }
 
-    onChangeText = (e) => {
+    onTextChange = (e) => {
         this.setState({keyword: e.target.value})
     }
 
@@ -24,13 +23,12 @@ class SearchBar extends Component {
                 <div className="col-8">
                     <form 
                     className="form-group mt-5 mb-5" 
-                    onSubmit={this.onSubmitForm}> 
+                    onSubmit={this.onFormSubmit}> 
                         <input 
                             type="text" 
                             className="form-control" 
                             placeholder="Type movie title" 
-                            id="search-input" 
-                            onChange={this.onChangeText}
+                            onChange={this.onTextChange}
                         />
                     </form>
                 </div>
