@@ -3,7 +3,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import axios from 'axios'
 
 class MovieDetail extends Component {
- 
   constructor(props) {
     super(props)
     this.state = {
@@ -14,15 +13,12 @@ class MovieDetail extends Component {
       director: '',
       actors: ''
     }
-   
-    // this.toggle = this.toggle.bind(this)
   }
 
   toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal
     }))
-
   }
   
   getData = () => {
@@ -34,9 +30,7 @@ class MovieDetail extends Component {
               i: this.props.imdbID
           }
       }
-
     ).then((res) => {
-        console.log(res.data)
         this.setState({
           title: res.data.Title,
           released: res.data.Released,
@@ -44,9 +38,6 @@ class MovieDetail extends Component {
           director: res.data.Director,
           actors: res.data.Actors
         })
-
-    }).catch((err) => {
-        console.log(err.message)
     })
   }
 
@@ -58,7 +49,7 @@ class MovieDetail extends Component {
   render() {
     return (
       <div>
-        <div className="card-link" style={{cursor: "pointer", color: "#007bff"}} onClick={this.modalOpen}>See Detail</div>
+        <div className="card-link" onClick={this.modalOpen}>See Detail</div>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Movie Detail</ModalHeader>
           <ModalBody>
@@ -67,7 +58,6 @@ class MovieDetail extends Component {
                   <div className="col-md-4">
                       <img src={this.props.poster} alt={this.state.title} className="img-fluid"/>
                   </div>
-                 
                   <div className="col-md-8">
                       <ul className="list-group">
                           <li className="list-group-item"><h3>{this.state.title}</h3></li>

@@ -18,6 +18,11 @@
     }
 }
 
+.card-link {
+    cursor: pointer;
+    color: #909090
+}
+
 .word-break {
     width: 100%;
     overflow: hidden;

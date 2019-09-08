@@ -2,16 +2,10 @@ import React, { Component } from 'react'
 import MovieDetail from './MovieDetail'
 
 class MovieList extends Component {
-
-    onLoadClick = () => {
-        
-    }
-
     renderList = () => {
-        if (this.props.data !== undefined) {
-            return this.props.data.map((item, index) => {
-                return (
-                <div className="col-lg-3 col-md-6 col-sm-6" key={index}>
+        return this.props.data.map((item) => {
+            return (
+                <div className="col-lg-3 col-md-6 col-sm-6 col-12" key={item.imdbID}>
                     <div className="card card-size mb-3">
                         <img src={item.Poster} className="card-image" alt={item.Title}/>
                         <div className="card-body">
@@ -24,40 +18,16 @@ class MovieList extends Component {
                         </div>
                     </div>
                 </div>
-                ) 
-            })
-        } else {
-            return (
-                <div className="col-12">
-                    No movie found
-                </div>
-            )
-        }
+            ) 
+        })
     }
     
     render() {
-        if (this.renderList().key === null) {
-            return (
-                <div>
-                    {this.renderList()} 
-                </div>
-            )
-        } else if (this.renderList().length !== 0){
-            return (
-                <div>
-                    <div className="row">
-                        {this.renderList()}    
-                    </div>
-                    <div className="row">
-                        <div className="col-12 text-center mt-4 mb-5">
-                            <button type="button" className="btn btn-dark" onClick={this.onLoadClick}>Load More</button>
-                        </div>
-                    </div>   
-                </div>
-            )
-        } else if (this.renderList().length === 0){
-            return null
-        }
+        return (
+            <div className="row">  
+                {this.renderList()}
+            </div>
+        )
     }
 }
 
