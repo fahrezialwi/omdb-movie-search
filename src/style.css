@@ -10,40 +10,30 @@
 .card-image {
     object-fit: cover;
     object-position: 50% 0;
-    height: 370px
+    height: 230px
 }
 
 .card-size {
-    height: 493px
+    height: 327px
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     .card-image {
-        height: 320px
+        height: 184px
     }
 
     .card-size {
-        height: 443px
+        height: 281px
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 576px) and (max-width: 991px) {
     .card-image {
-        height: 484px
+        height: 215px
     }
 
     .card-size {
-        height: 608px
-    }
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-    .card-image {
-        height: 345px
-    }
-
-    .card-size {
-        height: 468px
+        height: 312px
     }
 }
 
@@ -53,8 +43,16 @@
     }
 
     .card-size {
-        height: 443px
+        height: 417px
     }
+}
+
+.card-body {
+    padding: 15px
+}
+
+.card-subtitle {
+    font-size: 14px
 }
 
 .word-break {
@@ -79,15 +77,14 @@
     display: inline-block;
     font-size: 12px;
     margin-top: 8px;
-    margin-left: 20px;
+    margin-left: 20px
 }
 
 .imdb-star {
     height: 20px;
     width: auto;
     margin-bottom: 5px;
-    margin-right: 2px;
-
+    margin-right: 2px
 }
 
 .imdb-rating {
@@ -100,14 +97,10 @@
     display: inline-block;
     font-size: 10px;
     margin-top: 10px;
-    margin-left: 2px;
+    margin-left: 2px
 }
 
-.imdb-votes {
-    font-size: 12px
-}
-
-.imdb-list {
+.imdb-votes, .imdb-list {
     font-size: 12px
 }
 
@@ -121,7 +114,9 @@
     font-size: 14px
 }
 
-.card-description {
-    padding: 10px;
-    font-size: 14px
+.plot-description {
+    padding-right: 10px;
+    font-size: 14px;
+    overflow: scroll;
+    max-height: 160px
 }

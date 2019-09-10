@@ -14,7 +14,6 @@ class MovieList extends Component {
             director: '',
             actors: '',
             imdbRating : '',
-            imdbVotes: '',
             rated: '',
             runtime: '',
             plot: ''
@@ -33,7 +32,8 @@ class MovieList extends Component {
             {
                 params: {
                     apikey: '98e9d12',
-                    i: imdbID
+                    i: imdbID,
+                    plot: 'full'
                 }
             }
         ).then((res) => {
@@ -45,7 +45,6 @@ class MovieList extends Component {
                 director: res.data.Director,
                 actors: res.data.Actors,
                 imdbRating : res.data.imdbRating,
-                imdbVotes: res.data.imdbVotes,
                 rated: res.data.Rated,
                 runtime: res.data.Runtime,
                 plot: res.data.Plot
@@ -106,10 +105,8 @@ class MovieList extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-12 mt-4 mb-3">
-                                <div className="card">
-                                    <div className="card-description">{this.state.plot}</div>
-                                </div>
+                            <div className="col-12 mt-4 mb-4">
+                                <div className="plot-description">{this.state.plot}</div>
                             </div>
                         </div>
                         <div className="row">
@@ -126,12 +123,12 @@ class MovieList extends Component {
     renderList = () => {
         return this.props.data.map((item) => {
             return (
-                <div className="col-lg-3 col-md-6 col-sm-6 col-6" key={item.imdbID} onClick={() => {this.modalOpen(item.imdbID)}}>
-                    <div className="card card-size mb-3 card-link">
+                <div className="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6" key={item.imdbID} onClick={() => {this.modalOpen(item.imdbID)}}>
+                    <div className="card card-size mb-4 card-link">
                         <img src={item.Poster} className="card-image" alt={item.Title}/>
                         <div className="card-body">
-                        <h5 className="card-title word-break">{item.Title}</h5>
-                        <h6 className="card-subtitle mb-2 text-muted">{item.Year}</h6>
+                        <h6 className="card-title word-break">{item.Title}</h6>
+                        <div className="card-subtitle text-muted">{item.Year}</div>
                         </div>
                     </div>
                 </div>
