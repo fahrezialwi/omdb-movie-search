@@ -26,7 +26,21 @@ class MovieList extends Component {
         }))
     }
 
-    modalOpen = (imdbID) => {
+    modalOpen = (imdbID, poster, title) => {
+        this.setState({
+            poster: poster,
+            title: title,
+            released: 'Loading data ...',
+            genre: 'Loading data ...',
+            director: 'Loading data ...',
+            actors: 'Loading data ...',
+            imdbRating : 'N/A',
+            rated: 'Loading data ...',
+            runtime: '',
+            plot: 'Loading data ...'
+        })
+        this.toggle()
+
         axios.get(
             'http://www.omdbapi.com/',
             {
@@ -38,8 +52,6 @@ class MovieList extends Component {
             }
         ).then((res) => {
             this.setState({
-                poster: res.data.Poster,
-                title: res.data.Title,
                 released: res.data.Released,
                 genre: res.data.Genre,
                 director: res.data.Director,
@@ -50,8 +62,6 @@ class MovieList extends Component {
                 plot: res.data.Plot
             })
         })
-
-        this.toggle()   
     }
 
     modal = () => {
@@ -123,7 +133,7 @@ class MovieList extends Component {
     renderList = () => {
         return this.props.data.map((item) => {
             return (
-                <div className="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6" key={item.imdbID} onClick={() => {this.modalOpen(item.imdbID)}}>
+                <div className="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6" key={item.imdbID} onClick={() => {this.modalOpen(item.imdbID, item.Poster, item.Title)}}>
                     <div className="card card-size mb-4 card-link">
                         <img src={item.Poster} className="card-image" alt={item.Title}/>
                         <div className="card-body">

@@ -109,9 +109,10 @@
 }
 
 .close-button {
+    font-weight: 600;
     cursor: pointer;
     color: #212529;
-    font-size: 14px
+    font-size: 15px
 }
 
 .plot-description {
