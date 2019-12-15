@@ -1,2 +1,3 @@
 # OMDb Movie Search
-Movie search app using OMDb API and React
+
+Movie search application using OMDb API and React

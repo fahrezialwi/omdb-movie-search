@@ -118,6 +118,6 @@
 .plot-description {
     padding-right: 10px;
     font-size: 14px;
-    overflow: scroll;
+    overflow-y: scroll;
     max-height: 160px
 }

@@ -42,7 +42,7 @@ class MovieList extends Component {
         this.toggle()
 
         axios.get(
-            'http://www.omdbapi.com/',
+            'https://www.omdbapi.com/',
             {
                 params: {
                     apikey: '98e9d12',

@@ -17,7 +17,7 @@ class App extends Component {
 
     onLoadClick = () => {
         axios.get(
-            'http://www.omdbapi.com/',
+            'https://www.omdbapi.com/',
             {
                 params: {
                     apikey: '98e9d12',
@@ -39,7 +39,7 @@ class App extends Component {
 
     onSearchSubmit = (keyword) => {
         axios.get(
-            'http://www.omdbapi.com/',
+            'https://www.omdbapi.com/',
             {
                 params: {
                     apikey: '98e9d12',
